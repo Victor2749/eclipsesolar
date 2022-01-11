@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Eclipse solar</title>
+<style>
+*{ 
+    height: 100%;
+}
+
+body{
+    background-color: #09101e;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#eclipseSolar{
+    width: 260px; 
+    height: 260px; 
+    background-color: #09101e;
+
+    position: relative;
+}
+
+
+#sol{
+    position: absolute;
+
+
+    width: 260px; 
+    height: 260px; 
+    border-radius: 50%;
+
+    background-color: #fbfff5;
+
+    box-shadow: 0 0 30px #9fceb0, 0 0 50px #398b92;
+    animation: iluminacao 15s cubic-bezier(.48,.73,.8,.83) infinite;
+
+}
+
+#lua{
+    position: absolute;
+    left: 140%;
+
+    width: 260px; 
+    height: 260px; 
+    border-radius: 50%;
+
+    background-color: #09101e;
+
+    animation: tempo 15s cubic-bezier(.5,.9,.66,.25) infinite;
+}
+
+@keyframes tempo { 
+0% { 
+left: 140%; } 
+100% { 
+left: -140%; } }
+
+@keyframes iluminacao{
+
+    10%{
+        box-shadow: 0 0 30px #9fceb0, 0 0 50px #398b92;
+    }
+    43%{
+        box-shadow: 0 0 100px #9fceb0, 0 0 130px #398b92;
+    }
+
+
+}
+
+@media(max-width: 800px)
+{
+    #eclipseSolar, #lua, #sol
+    {
+        width: 160px;
+        height: 160px;
+    }
+
+
+    }
+
+</style>
+</head>
+<body>
+
+<div id="eclipseSolar">
+  <div id="sol"></div>
+  <div id="lua"></div>
+</div>
+
+</body>
+</html>
